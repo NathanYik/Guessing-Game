@@ -16,7 +16,7 @@
   height: 30px;
   bottom: 10px;
   left: 98px;
-  z-index: 100;
+  z-index: 1;
 }
 .indicator2 {
   position: absolute;
@@ -24,7 +24,7 @@
   height: 30px;
   bottom: 10px;
   left: 223px;
-  z-index: 100;
+  z-index: 1;
 }
 .indicator3 {
   position: absolute;
@@ -32,7 +32,7 @@
   height: 30px;
   bottom: 10px;
   left: 349px;
-  z-index: 100;
+  z-index: 1;
 }
 .indicator4 {
   position: absolute;
@@ -40,5 +40,5 @@
   height: 30px;
   bottom: 10px;
   left: 474px;
-  z-index: 100;
+  z-index: 1;
 }
