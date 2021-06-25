@@ -107,12 +107,6 @@ function App() {
           resetGame={resetGame}
           numPassed={numPassed}
         />
-        <div>
-          {bar[0]},{bar[1]},{bar[2]},{bar[3]}
-        </div>
-        <div>
-          {goal[0]},{goal[1]},{goal[2]},{goal[3]},{difference}
-        </div>
         <Chart
           difference={difference}
           background={background}
