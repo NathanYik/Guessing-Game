@@ -16,7 +16,7 @@ const Chart = ({
       {difference < 7 && (
         <>
           {bar.map((barNum, index) => (
-            <div>
+            <div key={index}>
               {barNum === goal[index] ? (
                 <img
                   src={checkmark}
