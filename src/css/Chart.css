@@ -1,0 +1,44 @@
+.chart-container {
+  position: relative;
+  border: 10px solid;
+  box-shadow: #9a9a9a;
+  border-radius: 4px;
+  max-width: 600px;
+  max-height: 600px;
+  width: 70vw;
+  /* height: 70vw; */
+  margin: 25px 0px;
+  margin-top: 5px;
+}
+.indicator1 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  left: 98px;
+  z-index: 100;
+}
+.indicator2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  left: 223px;
+  z-index: 100;
+}
+.indicator3 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  left: 349px;
+  z-index: 100;
+}
+.indicator4 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  left: 474px;
+  z-index: 100;
+}

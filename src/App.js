@@ -1,9 +1,11 @@
 import "./App.css";
 import "zingchart/es6";
-import Zingchart from "zingchart-react";
+import Header from "./components/Header";
 import { useState, useEffect } from "react";
 import warningImg from "./Media/warning.jpg";
 import checkmark from "./Media/checkmark.jpg";
+import Chart from "./components/Chart";
+import Controls from "./components/Controls";
 function App() {
   const [bar1, setBar1] = useState(0);
   const [bar2, setBar2] = useState(0);
@@ -150,107 +152,36 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <div className="header">
-          <button className="directions" onClick={() => setVisible(!visible)}>
-            Directions
-          </button>
-          <h1 className="title">Welcome to my Guessing Game!</h1>
-          {difference === 0 ? (
-            <button onClick={() => resetGame()} className="green-button">
-              Next Level
-            </button>
-          ) : (
-            <button className="grey-button">Next Level</button>
-          )}
-        </div>
-        <h2>Levels Passed: {numPassed}</h2>
-        <div className="chart-container" style={background}>
-          <Zingchart data={config} />
-          {difference < 7 && (
-            <>
-              {bar1 === goal1 ? (
-                <img src={checkmark} alt="" className="indicator1" />
-              ) : (
-                <img src={warningImg} alt="" className="indicator1" />
-              )}
-              {bar2 === goal2 ? (
-                <img src={checkmark} alt="" className="indicator2" />
-              ) : (
-                <img src={warningImg} alt="" className="indicator2" />
-              )}
-              {bar3 === goal3 ? (
-                <img src={checkmark} alt="" className="indicator3" />
-              ) : (
-                <img src={warningImg} alt="" className="indicator3" />
-              )}
-              {bar4 === goal4 ? (
-                <img src={checkmark} alt="" className="indicator4" />
-              ) : (
-                <img src={warningImg} alt="" className="indicator4" />
-              )}
-            </>
-          )}
-        </div>
-        <div className="controls">
-          <input
-            type="range"
-            min="0"
-            max="50"
-            className="bar-slider"
-            value={bar1}
-            onChange={(e) => changeBar(0, e)}
-          />
-          <input
-            type="range"
-            min="0"
-            max="50"
-            className="bar-slider"
-            value={bar2}
-            onChange={(e) => changeBar(1, e)}
-          />
-          <input
-            type="range"
-            min="0"
-            max="50"
-            className="bar-slider"
-            value={bar3}
-            onChange={(e) => changeBar(2, e)}
-          />
-          <input
-            type="range"
-            min="0"
-            max="50"
-            className="bar-slider"
-            value={bar4}
-            onChange={(e) => changeBar(3, e)}
-          />
-        </div>
+        <Header
+          setVisible={setVisible}
+          visible={visible}
+          difference={difference}
+          resetGame={resetGame}
+          numPassed={numPassed}
+        />
+        <Chart
+          difference={difference}
+          background={background}
+          config={config}
+          bar1={bar1}
+          bar2={bar2}
+          bar3={bar3}
+          bar4={bar4}
+          goal1={goal1}
+          goal2={goal2}
+          goal3={goal3}
+          goal4={goal4}
+          warningImg={warningImg}
+          checkmark={checkmark}
+        />
+        <Controls
+          bar1={bar1}
+          bar2={bar2}
+          bar3={bar3}
+          bar4={bar4}
+          changeBar={changeBar}
+        />
       </div>
-      {visible && (
-        <div className="instructions" onClick={() => setVisible(!visible)}>
-          <p>Click anywhere to exit</p>
-          <div className="instructions-box">
-            <h2>Directions:</h2>
-            <p>
-              There are four bars, each with a predetermined height that they
-              want to be at.
-            </p>
-            <p>The problem is, we don't know the heights!</p>
-            <p>
-              Luckily, we get a hint: the closer we get to the correct values
-              for each of the bars, the color of the border changes from red to
-              green.
-            </p>
-            <p>
-              Once you get close enough to the true heights of all 4 bars, an
-              indicator will show underneath the bars indicating which bars have
-              been set correctly and which ones are close to being set
-              correctly.
-            </p>
-            <p>Have fun!</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

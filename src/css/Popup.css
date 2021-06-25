@@ -1,0 +1,21 @@
+.instructions {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.instructions-box {
+  width: 600px;
+  padding: 30px 15px;
+  padding-top: 0;
+  background-color: #232b2b;
+  border: 2px solid #7a7a7a;
+  border-radius: 2px;
+}

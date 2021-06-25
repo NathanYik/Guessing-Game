@@ -1,0 +1,8 @@
+.bar-slider {
+  transform: rotate(-90deg);
+}
+.controls {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
