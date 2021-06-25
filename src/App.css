@@ -1,38 +1,137 @@
 .App {
   text-align: center;
+  height: 100%;
+  color: white;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+  background-color: #232b2b;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bar-slider {
+  transform: rotate(-90deg);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #232b2b;
+  height: 100%;
+}
+.chart-container {
+  position: relative;
+  border: 10px solid;
+  box-shadow: #9a9a9a;
+  border-radius: 4px;
+  width: 600px;
+  margin: 25px 0px;
+  margin-top: 5px;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+.directions {
+  height: 50px;
+  width: 110px;
+  border: 2px solid #7a7a7a;
+  border-radius: 3px;
+  background-color: #232b2b;
+  font-weight: bold;
   color: white;
+  cursor: pointer;
+}
+.green-button {
+  height: 50px;
+  width: 110px;
+  border: 2px solid #9a9a9a;
+  border-radius: 3px;
+  background-color: #1fbb3e;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.grey-button {
+  height: 50px;
+  width: 110px;
+  border: 2px solid #454545;
+  border-radius: 3px;
+  background-color: grey;
+  font-weight: bold;
+  color: #9a9a9a;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  display: flex;
+  width: 650px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.hint-box {
+  height: 75px;
+  width: 75px;
+  border: 2px solid black;
+  border-radius: 2px;
+  flex-basis: 89px;
+}
+.instructions {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.instructions-box {
+  width: 600px;
+  /* height: 500px; */
+  padding: 30px 15px;
+  padding-top: 0;
+  background-color: #232b2b;
+  border: 2px solid #7a7a7a;
+  border-radius: 2px;
+}
+.indicator1 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  left: 98px;
+  z-index: 100;
+}
+.indicator2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  left: 223px;
+  z-index: 100;
+}
+.indicator3 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  left: 349px;
+  z-index: 100;
+}
+.indicator4 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  left: 474px;
+  z-index: 100;
+}
+p {
+  font-weight: bold;
+}
+.title {
+  margin: 0;
+  /* margin-top: 15px; */
 }
