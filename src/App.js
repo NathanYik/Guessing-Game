@@ -76,25 +76,25 @@ function App() {
   const changeBar = (barNum, e) => {
     const newBar = [...bar];
     newBar[barNum] = parseInt(e.target.value);
-    const newdiff = calculateDiff(goal, newBar);
+    const newDiff = calculateDiff(goal, newBar);
     const newConfig = JSON.parse(JSON.stringify(config));
     newConfig.series[0].values = newBar;
     setBar(newBar);
-    setDifference(newdiff);
-    setBackground(changeBackground(newdiff));
+    setDifference(newDiff);
+    setBackground(changeBackground(newDiff));
     setConfig(newConfig);
   };
   const resetGame = () => {
     const newGoal = generateGoal();
     const newBar = [0, 0, 0, 0];
-    const newdiff = calculateDiff(newGoal, newBar);
+    const newDiff = calculateDiff(newGoal, newBar);
     const newConfig = JSON.parse(JSON.stringify(config));
     newConfig.series[0].values = [0, 0, 0, 0];
     setGoal(newGoal);
     setNumPassed(numPassed + 1);
     setBar(newBar);
-    setDifference(newdiff);
-    setBackground(changeBackground(newdiff));
+    setDifference(newDiff);
+    setBackground(changeBackground(newDiff));
     setConfig(newConfig);
   };
   return (

@@ -15,26 +15,23 @@ const Chart = ({
       <Zingchart data={config} />
       {difference < 7 && (
         <>
-          {bar[0] === goal[0] ? (
-            <img src={checkmark} alt="" className="indicator1" />
-          ) : (
-            <img src={warningImg} alt="" className="indicator1" />
-          )}
-          {bar[1] === goal[1] ? (
-            <img src={checkmark} alt="" className="indicator2" />
-          ) : (
-            <img src={warningImg} alt="" className="indicator2" />
-          )}
-          {bar[2] === goal[2] ? (
-            <img src={checkmark} alt="" className="indicator3" />
-          ) : (
-            <img src={warningImg} alt="" className="indicator3" />
-          )}
-          {bar[3] === goal[3] ? (
-            <img src={checkmark} alt="" className="indicator4" />
-          ) : (
-            <img src={warningImg} alt="" className="indicator4" />
-          )}
+          {bar.map((barNum, index) => (
+            <div>
+              {barNum === goal[index] ? (
+                <img
+                  src={checkmark}
+                  alt=""
+                  className={`indicator${index + 1}`}
+                />
+              ) : (
+                <img
+                  src={warningImg}
+                  alt=""
+                  className={`indicator${index + 1}`}
+                />
+              )}
+            </div>
+          ))}
         </>
       )}
     </div>
