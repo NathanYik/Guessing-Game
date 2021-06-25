@@ -1,5 +1,4 @@
 import "./App.css";
-import "zingchart/es6";
 import Header from "./components/Header";
 import { useState } from "react";
 import warningImg from "./Media/warning.jpg";
@@ -54,7 +53,7 @@ function App() {
     return diff;
   };
   const [bar, setBar] = useState([0, 0, 0, 0]);
-  const [goal, setGoal] = useState(generateGoal);
+  const [goal, setGoal] = useState(generateGoal());
   const [difference, setDifference] = useState(calculateDiff(goal, bar));
   const [numPassed, setNumPassed] = useState(0);
   const [background, setBackground] = useState(changeBackground(difference));
