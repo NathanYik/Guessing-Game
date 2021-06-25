@@ -145,7 +145,7 @@ function App() {
           : 79 - ((50 - difference) / 50) * 10
       }, 0.75) `,
     });
-    return () => {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [config]);
   return (
     <div className="App">
